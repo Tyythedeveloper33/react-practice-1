@@ -1,12 +1,18 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 const Login = () => {
+  const handleSubmit = (e)=> {
+   e.preventDefault()
+   alert('for successfully submitted')
+
+  }
+
   return (
 
     <div className="container mt-5">
-    <form>
+    <form action={handleSubmit}>
       <div className="mb-3">
-        <label htmlFor="email" className="form-label">Email address</label>
+        <label htmlFor="email" className="form-label text-white">Email address</label>
         <input
           type="email"
           className="form-control"
@@ -15,7 +21,7 @@ const Login = () => {
         />
       </div>
       <div className="mb-3">
-        <label htmlFor="password" className="form-label">Password</label>
+        <label htmlFor="password" className="form-label text-white">Password</label>
         <input
           type="password"
           className="form-control"
@@ -23,7 +29,9 @@ const Login = () => {
           placeholder="Password"
         />
       </div>
+      <button type='button' onClick={()=> window.location = "/"} className="btn btn-primary">Back</button>
       <button type="submit" className="btn btn-primary">Submit</button>
+
     </form>
   </div>
 
